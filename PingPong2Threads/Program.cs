@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace PingPong2Threads
             {
                 while (counter < MAX)
                 {
-                    Console.WriteLine("ping");
+                    ConsoleEx.WriteLine("ping");
                     Thread.Sleep(10);
                     counter++;
                     Monitor.Pulse(lk);
@@ -32,7 +33,7 @@ namespace PingPong2Threads
             {
                 while (counter < MAX)
                 {
-                    Console.WriteLine("pong");
+                    ConsoleEx.WriteLine("pong");
                     Thread.Sleep(10);
                     counter++;
                     Monitor.Pulse(lk);
@@ -44,7 +45,7 @@ namespace PingPong2Threads
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Ping pong! In 2 Threads With Monitor");
+            ConsoleEx.WriteLine("Ping pong! In 2 Threads With Monitor");
 
             //Создаем и запускаем первый поток
             Thread t1 = new Thread(Ping);
@@ -60,7 +61,7 @@ namespace PingPong2Threads
                 ;
             }
 
-            Console.WriteLine("The End!");
+            ConsoleEx.WriteLine("The End!");
             Console.ReadLine();
         }
     }
