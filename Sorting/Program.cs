@@ -22,9 +22,16 @@ namespace Sorting
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// #TODO
+        /// 1. Fix QuickSort
+        /// 2. Add Desc QuickSort
+        /// 3. Add decimal QuickSort
+        /// 4. Add RadixSort
+        /// </summary>
         private static void SortByDifferentAlgorithms()
         {
-            int[] array = { 123, 5, 7, 4000, 8, 567, 987, 311, 900, 0, -1 };
+            int[] array = { -1, 123, 5, 7, 4000, 8, 567, 987, 311, 900, 0, -1/*, 311*/ };
 
             ConsoleEx.printArray("Несортированный массив", array);
             Console.WriteLine();
