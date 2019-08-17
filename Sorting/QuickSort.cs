@@ -32,7 +32,7 @@ namespace Sorting
             return arr;
         }
 
-        public static int[] SortDesc(int[] arr)
+        public static int[] SortDesc(int[] arr, int left, int right)
         {
             throw new NotImplementedException();
         }
