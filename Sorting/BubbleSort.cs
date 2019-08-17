@@ -12,6 +12,11 @@ namespace Sorting
         /// <param name="arr"></param>
         public static int[] Sort(int[] arr)
         {
+            if (arr == null)
+            {
+                return null;
+            }
+
             int temp;
 
             for (int i = 0; i < arr.Length; i++)
