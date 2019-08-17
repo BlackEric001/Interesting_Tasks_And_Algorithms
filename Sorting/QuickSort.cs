@@ -54,14 +54,12 @@ namespace Sorting
 
                 if (left < right)
                 {
-                    if (arr[left] == arr[right])
-                    {
-                        return right;
-                    }
-
-                    int temp = arr[left];
+                    int tmp = arr[left];
                     arr[left] = arr[right];
-                    arr[right] = temp;
+                    arr[right] = tmp;
+
+                    if (arr[left] == arr[right])
+                        left++;
                 }
                 else
                 {
