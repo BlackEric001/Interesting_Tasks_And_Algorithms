@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Xunit;
 
 namespace Sorting.Test
@@ -14,12 +15,17 @@ namespace Sorting.Test
         }
 
         [Theory]
-        [InlineData(new int[]{1, 2, 3})]
+        [InlineData(new int[] { 1 })]
+        [InlineData(new int[] { 1, 2, 3})]
+        [InlineData(new int[] { 1, 1, 1 })]
+        [InlineData(new int[] { 3, 2, 3 })]
+        [InlineData(new int[] { 3, 2, 1 })]
+        [InlineData(new int[] { 1, 2, 3, 1 })]
         public void Test(int[] arr)
         {
-            var res = QuickSort.Sort(arr, 0, arr.Length - 1);
+            var res = QuickSort.Sort((int[])arr.Clone(), 0, arr.Length - 1);
 
-            Assert.Equal(new int[] { 1, 2, 3}, res);
+            Assert.Equal(arr.OrderBy(x => x), res);
         }
     }
 }
