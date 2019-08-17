@@ -5,7 +5,7 @@ Here I publish some interesting tasks and algorithms
 2. Singly linked list reverse. Recursive and in loop.
 3. Ping pong with 2 threads using Monitor synchronization.
 4. Sorting algorithms:
-    a) Bubble 
-    b) Quick wint unit test
+    i) Bubble 
+    ii) Quick with unit tests
 
 Each task in separate project. For investigate set project as startup an debug it.
