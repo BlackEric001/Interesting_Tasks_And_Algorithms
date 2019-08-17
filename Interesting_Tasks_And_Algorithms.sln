@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PingPong2Threads", "PingPon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting", "Sorting\Sorting.csproj", "{C366E99A-0E04-4F59-9B39-4C40963768D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{5FEE36CF-BBA7-402A-B281-0CEA71145811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{5FEE36CF-BBA7-402A-B281-0CEA71145811}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SortingAlgs", "SortingAlgs", "{561FB640-5F5D-4B4D-B358-837DBB1B1308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorting.Test", "Sorting.Test\Sorting.Test.csproj", "{6F963491-0276-40DA-B9EE-2B8A331F596B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,17 @@ Global
 		{5FEE36CF-BBA7-402A-B281-0CEA71145811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FEE36CF-BBA7-402A-B281-0CEA71145811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FEE36CF-BBA7-402A-B281-0CEA71145811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F963491-0276-40DA-B9EE-2B8A331F596B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F963491-0276-40DA-B9EE-2B8A331F596B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F963491-0276-40DA-B9EE-2B8A331F596B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F963491-0276-40DA-B9EE-2B8A331F596B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C366E99A-0E04-4F59-9B39-4C40963768D5} = {561FB640-5F5D-4B4D-B358-837DBB1B1308}
+		{6F963491-0276-40DA-B9EE-2B8A331F596B} = {561FB640-5F5D-4B4D-B358-837DBB1B1308}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8CAB5E7A-B08D-482D-808F-247D979D798B}

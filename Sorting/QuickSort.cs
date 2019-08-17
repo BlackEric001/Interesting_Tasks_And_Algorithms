@@ -32,6 +32,11 @@ namespace Sorting
             return arr;
         }
 
+        public static int[] SortDesc(int[] arr)
+        {
+            throw new NotImplementedException();
+        }
+
         private static int Partition(int[] arr, int left, int right)
         {
             int pivot = arr[left];
