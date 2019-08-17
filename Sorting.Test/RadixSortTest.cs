@@ -17,6 +17,7 @@ namespace Sorting.Test
         }
 
         [Theory]
+        [InlineData(new int[] { })]
         [InlineData(new int[] { 1 })]
         [InlineData(new int[] { 1, 2, 3 })]
         [InlineData(new int[] { 1, 1, 1 })]

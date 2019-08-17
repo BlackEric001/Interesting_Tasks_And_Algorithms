@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Sorting.Test
 {
-    public class QuickSortDesc
+    public class QuickSortDescTest
     {
         [Fact]
         public void TestNull()
@@ -17,6 +17,7 @@ namespace Sorting.Test
         }
 
         [Theory]
+        [InlineData(new int[] {  })]
         [InlineData(new int[] { 1 })]
         [InlineData(new int[] { 1, 2, 3 })]
         [InlineData(new int[] { 1, 1, 1 })]
