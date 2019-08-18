@@ -26,6 +26,8 @@ namespace Sorting.Test
         [InlineData(new int[] { 1, 2, 3, 1 })]
         [InlineData(new int[] { -1, 123, 5, 7, 4000, 8, 567, 987, 311, 900, 0, -1 })]
         [InlineData(new int[] { -1, 123, 5, 7, 4000, 8, 567, 987, 311, 900, 0, -1, 311 })]
+        [InlineData(new int[] { 1, 5, 1, 2, 10, 6, 9, 8, 3, 7, 4 })]
+        [InlineData(new int[] { 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4 })]
         public void Test(int[] arr)
         {
             var res = BubbleSort.Sort((int[])arr.Clone());

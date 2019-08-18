@@ -19,11 +19,11 @@ namespace Sorting
             {
                 int pivot = Partition(arr, left, right);
 
-                if (pivot > 1)
+                //if (pivot > 1)
                 {
                     Sort(arr, left, pivot - 1);
                 }
-                if (pivot + 1 < right)
+                //if (pivot + 1 < right)
                 {
                     Sort(arr, pivot + 1, right);
                 }

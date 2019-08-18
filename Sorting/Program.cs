@@ -40,6 +40,9 @@ namespace Sorting
             //Quick Sort
             RunQuickSort(arraySize, bigArray);
 
+            //QuickSortDesc
+            RunQuickSortDesc(arraySize, bigArray);
+
             //Linq Sort
             RunLinqSort(arraySize, bigArray);
 
@@ -66,6 +69,16 @@ namespace Sorting
             return qs;
         }
 
+        private static int[] RunQuickSortDesc(int arraySize, int[] bigArray)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var qs = QuickSort.SortDesc((int[])bigArray.Clone(), 0, bigArray.Length - 1);
+            watch.Stop();
+            Console.WriteLine($"QuickSortDesc {arraySize} elements = {watch.ElapsedMilliseconds} ms");
+
+            return qs;
+        }
+
         /// <summary>
         /// #TODO
         /// 1. Add Desc QuickSort
@@ -79,13 +92,16 @@ namespace Sorting
             ConsoleEx.printArray("Несортированный массив:", array);
             Console.WriteLine();
 
-            var sortedArr = RunBubbleSort(array.Length, array);//BubbleSort.Sort((int[])array.Clone());
+            var sortedArr = RunBubbleSort(array.Length, array);
             ConsoleEx.printArray("Массив отсортированный пузырьком:", sortedArr);
 
             Console.WriteLine();
 
-            sortedArr = RunQuickSort(array.Length, array);//QuickSort.Sort((int[])array.Clone(), 0, array.Length - 1);
+            sortedArr = RunQuickSort(array.Length, array);
             ConsoleEx.printArray("Массив отсортированный быстрой сортировкой:", sortedArr);
+
+            sortedArr = RunQuickSortDesc(array.Length, array);
+            ConsoleEx.printArray("Массив отсортированный быстрой сортировкой desc:", sortedArr);
         }
 
         private static void PerformanceCompare(int arraySize)
@@ -100,6 +116,9 @@ namespace Sorting
 
             //Quick Sort
             RunQuickSort(arraySize, bigArray);
+
+            //QuickSortDesc
+            RunQuickSortDesc(arraySize, bigArray);
 
             //Bubble Sort
             RunBubbleSort(arraySize, bigArray);
