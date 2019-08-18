@@ -34,7 +34,52 @@ namespace Sorting
 
         public static int[] SortDesc(int[] arr, int left, int right)
         {
-            throw new NotImplementedException();
+            if (left < right)
+            {
+                int pivot = PartitionDesc(arr, left, right);
+                //if (pivot > 1)
+                {
+                    SortDesc(arr, left, pivot/* - 1*/);
+                }
+                //if (pivot + 1 < right)
+                {
+                    SortDesc(arr, pivot + 1, right);
+                }
+            }
+
+            return arr;
+        }
+
+        private static int PartitionDesc(int[] arr, int left, int right)
+        {
+            int pivot = arr[left];
+            while (true)
+            {
+                while (arr[left] > pivot)
+                {
+                    left++;
+                }
+
+                while (arr[right] < pivot)
+                {
+                    right--;
+                }
+
+                if (left < right)
+                {
+                    int tmp = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = tmp;
+
+                    //if (arr[left] == arr[right])
+                        left++;
+                    right--;
+                }
+                else
+                {
+                    return right;
+                }
+            }
         }
 
         private static int Partition(int[] arr, int left, int right)
