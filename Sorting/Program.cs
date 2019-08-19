@@ -81,9 +81,7 @@ namespace Sorting
 
         /// <summary>
         /// #TODO
-        /// 1. Add Desc QuickSort
-        /// 2. Add decimal QuickSort
-        /// 3. Add RadixSort
+        /// 1. Add RadixSort
         /// </summary>
         private static void SortByDifferentAlgorithms()
         {

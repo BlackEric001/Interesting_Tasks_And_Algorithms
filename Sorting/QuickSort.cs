@@ -13,20 +13,14 @@ namespace Sorting
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns></returns>
-        public static int[] Sort(int[] arr, int left, int right)
+        public static T[] Sort<T>(T[] arr, int left, int right) where T : struct, System.IComparable<T>
         {
             if (left < right)
             {
                 int pivot = Partition(arr, left, right);
 
-                //if (pivot > 1)
-                {
-                    Sort(arr, left, pivot - 1);
-                }
-                //if (pivot + 1 < right)
-                {
-                    Sort(arr, pivot + 1, right);
-                }
+                Sort(arr, left, pivot);
+                Sort(arr, pivot + 1, right);
             }
 
             return arr;
@@ -37,14 +31,9 @@ namespace Sorting
             if (left < right)
             {
                 int pivot = PartitionDesc(arr, left, right);
-                //if (pivot > 1)
-                {
-                    SortDesc(arr, left, pivot/* - 1*/);
-                }
-                //if (pivot + 1 < right)
-                {
-                    SortDesc(arr, pivot + 1, right);
-                }
+
+                SortDesc(arr, left, pivot);
+                SortDesc(arr, pivot + 1, right);
             }
 
             return arr;
@@ -71,8 +60,7 @@ namespace Sorting
                     arr[left] = arr[right];
                     arr[right] = tmp;
 
-                    //if (arr[left] == arr[right])
-                        left++;
+                    left++;
                     right--;
                 }
                 else
@@ -82,29 +70,29 @@ namespace Sorting
             }
         }
 
-        private static int Partition(int[] arr, int left, int right)
+        private static int Partition<T>(T[] arr, int left, int right) where T : struct, System.IComparable<T>
         {
-            int pivot = arr[left];
+            T pivot = arr[left];
             while (true)
             {
-                while (arr[left] < pivot)
+                while (arr[left].CompareTo(pivot) < 0)
                 {
                     left++;
                 }
 
-                while (arr[right] > pivot)
+                while (arr[right].CompareTo(pivot) > 0)
                 {
                     right--;
                 }
 
                 if (left < right)
                 {
-                    int tmp = arr[left];
+                    T tmp = arr[left];
                     arr[left] = arr[right];
                     arr[right] = tmp;
 
-                    if (arr[left] == arr[right])
-                        left++;
+                    left++;
+                    right--;
                 }
                 else
                 {
