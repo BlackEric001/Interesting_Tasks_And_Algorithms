@@ -7,7 +7,7 @@ Here I publish some interesting tasks and algorithms
 <li>Sorting algorithms  with unit tests:
   <ol type="a">
     <li>Bubble sort</li>
-    <li>Quick sort, Quick sort Desc, Generic Quick Sort Dual Pivot</li>
+    <li>Quick sort, Quick sort Desc, Generic Quick Sort Dual Pivot (multi quick sort)</li>
     <li>Radix sort</li>
     <li>Merge sort</li>
   </ol></li>
