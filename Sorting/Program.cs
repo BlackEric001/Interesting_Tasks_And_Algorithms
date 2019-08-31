@@ -40,6 +40,9 @@ namespace Sorting
             //Quick Sort
             RunQuickSort(arraySize, bigArray);
 
+            //Quick Sort Dual Pivot
+            RunQuickSortDualPivot(arraySize, bigArray);
+
             //QuickSortDesc
             RunQuickSortDesc(arraySize, bigArray);
 
@@ -75,6 +78,16 @@ namespace Sorting
             return qs;
         }
 
+        private static int[] RunQuickSortDualPivot(int arraySize, int[] bigArray)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var qs = QuickSortDualPivot.Sort((int[])bigArray.Clone(), 0, bigArray.Length - 1);
+            watch.Stop();
+            Console.WriteLine($"QuickSortDualPivot {arraySize} elements = {watch.ElapsedMilliseconds} ms");
+
+            return qs;
+        }
+
         private static int[] RunQuickSortDesc(int arraySize, int[] bigArray)
         {
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -104,6 +117,9 @@ namespace Sorting
             sortedArr = RunQuickSort(array.Length, array);
             ConsoleEx.printArray("Массив отсортированный быстрой сортировкой:", sortedArr);
 
+            sortedArr = RunQuickSortDualPivot(array.Length, array);
+            ConsoleEx.printArray("Массив отсортированный быстрой сортировкой с двойным разбиением:", sortedArr);
+
             sortedArr = RunQuickSortDesc(array.Length, array);
             ConsoleEx.printArray("Массив отсортированный быстрой сортировкой desc:", sortedArr);
 
@@ -126,6 +142,9 @@ namespace Sorting
 
             //Quick Sort
             RunQuickSort(arraySize, bigArray);
+
+            //Quick Sort Dual Pivot
+            RunQuickSortDualPivot(arraySize, bigArray);
 
             //QuickSortDesc
             RunQuickSortDesc(arraySize, bigArray);
