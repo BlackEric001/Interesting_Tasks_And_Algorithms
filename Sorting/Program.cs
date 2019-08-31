@@ -46,6 +46,9 @@ namespace Sorting
             //Linq Sort
             RunLinqSort(arraySize, bigArray);
 
+            //Radix Sort
+            RunRadixSort(arraySize, bigArray);
+
             Console.WriteLine();
         }
 
@@ -124,6 +127,9 @@ namespace Sorting
             //Linq Sort
             RunLinqSort(arraySize, bigArray);
 
+            //Radix Sort
+            RunRadixSort(arraySize, bigArray);
+
             Console.WriteLine();
         }
 
@@ -133,6 +139,16 @@ namespace Sorting
             var bs = BubbleSort.Sort((int[])bigArray.Clone());
             watch.Stop();
             Console.WriteLine($"BubbleSort {arraySize} elements = {watch.ElapsedMilliseconds} ms");
+
+            return bs;
+        }
+
+        private static int[] RunRadixSort(int arraySize, int[] bigArray)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var bs = RadixSort.SortInt((int[])bigArray.Clone());
+            watch.Stop();
+            Console.WriteLine($"RadixSort {arraySize} elements = {watch.ElapsedMilliseconds} ms");
 
             return bs;
         }
