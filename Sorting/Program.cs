@@ -49,6 +49,9 @@ namespace Sorting
             //Radix Sort
             RunRadixSort(arraySize, bigArray);
 
+            //Array Sort
+            RunArraySort(arraySize, bigArray);
+
             Console.WriteLine();
         }
 
@@ -103,6 +106,12 @@ namespace Sorting
 
             sortedArr = RunQuickSortDesc(array.Length, array);
             ConsoleEx.printArray("Массив отсортированный быстрой сортировкой desc:", sortedArr);
+
+            sortedArr = RunRadixSort(array.Length, array);
+            ConsoleEx.printArray("Массив отсортированный поразрядной сортировкой:", sortedArr);
+
+            sortedArr = RunArraySort(array.Length, array);
+            ConsoleEx.printArray("Массив отсортированный Array.Sort:", sortedArr);
         }
 
         private static void PerformanceCompare(int arraySize)
@@ -130,6 +139,9 @@ namespace Sorting
             //Radix Sort
             RunRadixSort(arraySize, bigArray);
 
+            //Array Sort
+            RunArraySort(arraySize, bigArray);
+
             Console.WriteLine();
         }
 
@@ -149,6 +161,17 @@ namespace Sorting
             var bs = RadixSort.SortInt((int[])bigArray.Clone());
             watch.Stop();
             Console.WriteLine($"RadixSort {arraySize} elements = {watch.ElapsedMilliseconds} ms");
+
+            return bs;
+        }
+
+        private static int[] RunArraySort(int arraySize, int[] bigArray)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var bs = (int[])bigArray.Clone();
+            Array.Sort(bs);
+            watch.Stop();
+            Console.WriteLine($"ArraySort {arraySize} elements = {watch.ElapsedMilliseconds} ms");
 
             return bs;
         }
