@@ -6,12 +6,12 @@ using Xunit;
 
 namespace Sorting.Test
 {
-    public class MergeSortTest
+    public class MergeSortDescTest
     {
         [Fact]
         public void TestNull()
         {
-            var res = MergeSort.Sort((decimal[])null);
+            var res = MergeSort.SortDesc((decimal[])null);
 
             Assert.Null(res);
         }
@@ -28,20 +28,20 @@ namespace Sorting.Test
         [InlineData(new int[] { -1, 123, 5, 7, 4000, 8, 567, 987, 311, 900, 0, -1, 311 })]
         [InlineData(new int[] { 1, 5, 1, 2, 10, 6, 9, 8, 3, 7, 4 })]
         [InlineData(new Int64[] { 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4 })]
-        public void Test<T>(T[] arr) where T: struct, IComparable<T>
+        public void Test<T>(T[] arr) where T : struct, IComparable<T>
         {
-            var res = MergeSort.Sort((T[])arr.Clone());
+            var res = MergeSort.SortDesc((T[])arr.Clone());
 
-            Assert.Equal(arr.OrderBy(x => x), res);
+            Assert.Equal(arr.OrderByDescending(x => x), res);
         }
 
         [Fact]
         public void TestDecimal()
         {
             decimal[] arr = new decimal[] { 1.1m, 2.1m, -22.2344455m };
-            var res = MergeSort.Sort((decimal[])arr.Clone());
+            var res = MergeSort.SortDesc((decimal[])arr.Clone());
 
-            Assert.Equal(arr.OrderBy(x => x), res);
+            Assert.Equal(arr.OrderByDescending(x => x), res);
         }
     }
 }

@@ -9,7 +9,17 @@ namespace Sorting
     /// </summary>
     public class MergeSort
     {
-        public static int[] Sort(int[] arr)
+        public static T[] Sort<T>(T[] arr) where T : struct, System.IComparable<T>
+        {
+            if (arr == null)
+            {
+                return null;
+            }
+
+            return arr;
+        }
+
+        public static T[] SortDesc<T>(T[] arr) where T : struct, System.IComparable<T>
         {
             if (arr == null)
             {
