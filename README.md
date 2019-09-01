@@ -9,7 +9,7 @@ Here I publish some interesting tasks and algorithms
     <li>Bubble sort</li>
     <li>Quick sort, Quick sort Desc, Generic Quick Sort Dual Pivot (multi quick sort)</li>
     <li>Radix sort</li>
-    <li>Merge sort</li>
+    <li>Generic Merge sort, Generic Merge sort desc</li>
   </ol></li>
 </ol>
 
