@@ -52,6 +52,9 @@ namespace Sorting
             //Radix Sort
             RunRadixSort(arraySize, bigArray);
 
+            //Merge Sort
+            RunMergeSort(arraySize, bigArray);
+
             //Array Sort
             RunArraySort(arraySize, bigArray);
 
@@ -126,6 +129,9 @@ namespace Sorting
             sortedArr = RunRadixSort(array.Length, array);
             ConsoleEx.printArray("Массив отсортированный поразрядной сортировкой:", sortedArr);
 
+            sortedArr = RunMergeSort(array.Length, array);
+            ConsoleEx.printArray("Массив отсортированный сортировкой слиянием:", sortedArr);
+
             sortedArr = RunArraySort(array.Length, array);
             ConsoleEx.printArray("Массив отсортированный Array.Sort:", sortedArr);
         }
@@ -158,6 +164,9 @@ namespace Sorting
             //Radix Sort
             RunRadixSort(arraySize, bigArray);
 
+            //Merge Sort
+            RunMergeSort(arraySize, bigArray);
+
             //Array Sort
             RunArraySort(arraySize, bigArray);
 
@@ -180,6 +189,16 @@ namespace Sorting
             var bs = RadixSort.SortInt((int[])bigArray.Clone());
             watch.Stop();
             Console.WriteLine($"RadixSort {arraySize} elements = {watch.ElapsedMilliseconds} ms");
+
+            return bs;
+        }
+
+        private static int[] RunMergeSort(int arraySize, int[] bigArray)
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var bs = MergeSort.Sort((int[])bigArray.Clone(), 0, bigArray.Length - 1);
+            watch.Stop();
+            Console.WriteLine($"MergeSort {arraySize} elements = {watch.ElapsedMilliseconds} ms");
 
             return bs;
         }
