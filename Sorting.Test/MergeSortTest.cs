@@ -11,7 +11,7 @@ namespace Sorting.Test
         [Fact]
         public void TestNull()
         {
-            var res = MergeSort.Sort((decimal[])null);
+            var res = MergeSort.Sort((decimal[])null, 0, 0);
 
             Assert.Null(res);
         }
@@ -30,7 +30,7 @@ namespace Sorting.Test
         [InlineData(new Int64[] { 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4 })]
         public void Test<T>(T[] arr) where T: struct, IComparable<T>
         {
-            var res = MergeSort.Sort((T[])arr.Clone());
+            var res = MergeSort.Sort((T[])arr.Clone(), 0, arr.Length - 1);
 
             Assert.Equal(arr.OrderBy(x => x), res);
         }
@@ -39,7 +39,7 @@ namespace Sorting.Test
         public void TestDecimal()
         {
             decimal[] arr = new decimal[] { 1.1m, 2.1m, -22.2344455m };
-            var res = MergeSort.Sort((decimal[])arr.Clone());
+            var res = MergeSort.Sort((decimal[])arr.Clone(), 0, arr.Length - 1);
 
             Assert.Equal(arr.OrderBy(x => x), res);
         }
